@@ -2,24 +2,24 @@ package com.tat.springangular.model.response;
 
 import com.tat.springangular.model.Links;
 
-public class ReservableRoomResponse {
+public class ReservableRoomResponse{
 
 	private Long id;
 	private Integer roomNumber;
 	private Integer price;
 	private Links links;
 	
+	
+	
 	public ReservableRoomResponse() {
 		super();
 	}
-	
 	public ReservableRoomResponse(Integer roomNumber, Integer price) {
 		super();
 		this.roomNumber = roomNumber;
 		this.price = price;
 	}
-	
-	public Long getId() {
+	public Long getId() { 
 		return id;
 	}
 	public void setId(Long id) {
@@ -43,6 +43,6 @@ public class ReservableRoomResponse {
 	public void setLinks(Links links) {
 		this.links = links;
 	}
-	
+
 	
 }

@@ -8,25 +8,23 @@ import com.tat.springangular.entity.RoomEntity;
 import com.tat.springangular.repository.RoomRepository;
 
 @Component
-public class H2Bootstrap implements CommandLineRunner {
+public class H2Bootstrap implements CommandLineRunner{
 
 	@Autowired
 	RoomRepository roomRepository;
 	
 	@Override
-	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
+	public void run(String... arg0) throws Exception {
 		
-		System.out.println("Bootstrapping data: ");
+		System.out.println("Bootstraping Data: ");
+		roomRepository.save(new RoomEntity(405,"200"));
+		roomRepository.save(new RoomEntity(406,"270"));
+		roomRepository.save(new RoomEntity(407,"580"));
+		roomRepository.save(new RoomEntity(408,"300"));
 		
-		roomRepository.save(new RoomEntity(405, "200"));
-		roomRepository.save(new RoomEntity(406, "220"));
-		roomRepository.save(new RoomEntity(407, "250"));
-		
+		System.out.println("Bootstraping Data2: count= "+roomRepository.count());
 		Iterable<RoomEntity> itr = roomRepository.findAll();
-		
-		System.out.println("Printing out data: ");
-		for(RoomEntity room : itr) {
+		for(RoomEntity room : itr ){
 			System.out.println(room.getRoomNumber());
 		}
 	}
